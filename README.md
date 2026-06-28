@@ -1,33 +1,93 @@
-# Motor PH Payroll System by Group 28
+# MotorPH Employee App
+### Computer Programming 2 – MO-IT103 | Group 22
 
-## Team Details
+A Java Swing-based payroll management system developed for MotorPH that automates employee payroll computation. The application calculates mandatory government deductions such as SSS, PhilHealth, Pag-IBIG, and withholding tax while providing payroll processing, employee record management, and attendance tracking features.
 
-- Edison A. Modesto Jr.
-  - File Reader Module
-  - Payroll Calculation Module
-  - Project Manager/Technical Manager
+---
+
+## Key Features
+
+- Secure login system with role-based access for payroll staff and employees
+- Employee profile viewing, editing, and deletion
+- Attendance record management (add, edit, delete) per employee
+- Payroll generation for individual employees
+- Batch payroll processing for all employees
+- Excel-based employee and attendance record handling with automatic saving
+- Integrated 2024 SSS contribution rate calculations
+- Automatic computation of PhilHealth, Pag-IBIG, and withholding tax deductions
+- Input validation and confirmation dialogs for all record changes
+
+---
+
+## Role-Based Access
+
+**Payroll Staff** (`payroll_staff / 12345`)
+- Process payroll for one or all employees
+- Add, edit, and delete any employee record
+- Add, edit, and delete attendance records for any employee
+
+**Employee** (`employee / 12345`)
+- View and edit own personal information
+- Delete own account
+- Add, edit, and delete own attendance records
+
+---
+
+## How to Run the Application
+
+1. Open the project using **Apache NetBeans IDE**
+2. Make sure the following Excel files are in the `data/` folder:
+   - `MotorPH_Employee Data.xlsx` (contains Employee Details and Attendance Record sheets)
+   - `SSS Contribution.xlsx`
+3. Right-click the project → **Properties → Run** → set Main Class to `LoginFrame`
+4. Press **F6** to build and run the application
+
+---
+
+## Sample Login Credentials
+
+| Username | Password | Access Level |
+|---|---|---|
+| `payroll_staff` | `12345` | Full payroll and record management |
+| `employee` | `12345` | Own profile and attendance only |
+
+> **Note:** After logging in as `employee`, you will be prompted to enter your Employee Number to access your profile.
+
+---
+
+## Technologies Used
+
+- Java Development Kit (JDK) 25
+- Java Swing for the graphical user interface
+- Apache POI for reading and writing Excel files
+- Apache NetBeans IDE for development
+
+---
+
+## Project Structure
+
+```
+src/main/java/
+├── LoginFrame.java              — Login screen with role-based routing
+├── MotorPHPayroll.java          — Core data engine, calculations, Excel I/O
+├── EmployeeDashboard.java       — Employee self-service dashboard
+├── PayrollDashboard.java        — Payroll staff dashboard
+├── PayrollOneEmployeeFrame.java — Single employee payroll computation
+├── AllEmployeesPayrollFrame.java— Batch payroll report for all employees
+├── ManageEmployeesFrame.java    — Add, edit, delete employee records
+└── ManageAttendanceFrame.java   — Add, edit, delete attendance records
+
+data/
+├── MotorPH_Employee Data.xlsx   — Employee details and attendance records
+├── SSS Contribution.xlsx        — SSS contribution bracket table
+├── Philhealth Contribution.xlsx — PhilHealth reference
+├── Pag-ibig Contribution.xlsx   — Pag-IBIG reference
+└── Witholding Tax.xlsx          — Withholding tax reference
+```
+
+---
+
+## Team Members
+
 - Charlene Padua
-  - Login Module
-- Ronnel Sastre
-  - Payroll Staff Module
-  - Payroll Calculation Module
-- Vince Michael Bugayong
-  - Employee Module
-
-## Program Details
-
--Provide a short description of how the system works.
-
-The Motor PH Payroll System is a Java-based payroll application for Motor PH employees. It is our output for our MS2 submission for the CP1 course. 
-It handles salary computation and employee data management through a simple terminal interface.
-
-How it works:
-Login — Users can login as either an Employee or Payroll Staff
-Employee View — Employees can view their personal information based on the provided spreadsheet in the project.
-Payroll Processing — Payroll staff can view employee salaries that is automatically computed prior to display.
-Salary Calculation — Calculates gross pay, then deducts SSS, PhilHealth, Pag-IBIG, and withholding tax and deduct it to the Payroll.
-
-
-## Project Plan Link
-
--[Include the link to your project plan.](https://docs.google.com/spreadsheets/d/1gpO08MjDnTBaLqW6SP1leHUkjKIakOjlzzCXsubyrh0/edit?gid=2134013708#gid=2134013708)
+- Jose Murphy Ivan Castro
